@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Bluetooth Headphones",
+        "category": "Electronics",
+        "price": 59.99,
+        "currency": "USD",
+        "stock": 120,
+        "image": "assets/images/product_1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Smartphone 128GB",
+        "category": "Electronics",
+        "price": 699.99,
+        "currency": "USD",
+        "stock": 35,
+        "image": "assets/images/product_2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Stainless Steel Water Bottle",
+        "category": "Home & Kitchen",
+        "price": 19.99,
+        "currency": "USD",
+        "stock": 200,
+        "image": "assets/images/product_3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Running Shoes",
+        "category": "Sports & Outdoors",
+        "price": 89.99,
+        "currency": "USD",
+        "stock": 75,
+        "image": "assets/images/product_4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Gaming Laptop",
+        "category": "Computers",
+        "price": 1299.99,
+        "currency": "USD",
+        "stock": 20,
+        "image": "assets/images/product_5.jpg"
+    }
+]

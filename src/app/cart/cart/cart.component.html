@@ -1,0 +1,17 @@
+<div *ngIf="cartItems" class="container">
+    <mat-card class="example-card" *ngFor="let productDetail of cartItems">
+        <mat-card-header class="card">
+            <mat-card-title>{{productDetail.name}}</mat-card-title>
+            <mat-card-subtitle>{{productDetail.category}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card">
+            <img [src]="productDetail.image" alt="{{productDetail.name}}" width="200">
+            <p>{{productDetail.price}}</p>
+        </mat-card-content>
+        <mat-card-actions class="card">
+            <button mat-button color="warn" (click)="removeFromCart(productDetail)" class="m-3">
+                ❌ Remove
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
