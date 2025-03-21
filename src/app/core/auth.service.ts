@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 export const Users = [
     {
@@ -22,16 +23,18 @@ export const Users = [
 })
 
 export class AuthService {
-    constructor() { }
+
+    constructor(private router: Router) { }
 
     private token: string | null = null;
+    private tokenKey = 'auth_token';
 
-    public login(username: string, password: string): boolean {
-        const user = Users.find(u => u.username === username && u.password === password);
 
+    public login(email: string, password: string): boolean {
+        const user = Users.find(u => u.email === email && u.password === password);
         if (user) {
             const token = this.generateFakeToken(user);
-            localStorage.setItem('token', token);
+            localStorage.setItem(this.tokenKey, token);
             return true;
         }
 
@@ -45,5 +48,18 @@ export class AuthService {
             exp: Math.floor(Date.now() / 1000) + 60 * 60
         };
         return btoa(JSON.stringify(payload));
+    }
+
+    public isLoggedIn(): boolean {
+        return localStorage.getItem(this.tokenKey) !== null;
+    }
+
+    public getToken(): string | null {
+        return localStorage.getItem(this.tokenKey);
+    }
+
+    public logout(): void {
+        localStorage.removeItem(this.tokenKey);
+        this.router.navigate(['/login']);
     }
 }

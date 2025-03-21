@@ -1,4 +1,11 @@
-<div *ngIf="productList" class="container">
+
+<div class="right-container">
+  <button mat-button color="primary" routerLink="/cart">
+    🛒 {{ cartCount }}
+  </button>
+  <button (click)="logout()">Loggout</button>
+</div>
+<div *ngIf="productList" class="left-container">
   <mat-card class="example-card" *ngFor="let productDetail of productList">
     <mat-card-header class="card">
       <mat-card-title>{{productDetail.name}}</mat-card-title>
